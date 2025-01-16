@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Barcode Profil Sekolah</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+    <h1>Generate Barcode Profil Sekolah</h1>
+    <div id="barcode"></div>
+    <script>
+        // URL tujuan barcode (halaman profil sekolah)
+        const profileURL = "https://ilhamariandi.github.io/WebsiteSD/"; // Ganti dengan URL Anda
+
+        // Generate barcode
+        const barcodeContainer = document.getElementById('barcode');
+        QRCode.toCanvas(profileURL, { width: 300 }, (err, canvas) => {
+            if (err) console.error(err);
+            barcodeContainer.appendChild(canvas);
+        });
+    </script>
+</body>
+</html>
